@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Seamless Wi-Fi Auto Login System for ABES Campus Network</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    
+    .wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .container {
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      box-sizing: border-box;
+    }
+    
+    button {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      cursor: pointer;
+    }
+    
+    .remember-me {
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+    }
+    
+    .remember-me input {
+      width: auto;
+      margin-right: 8px;
+    }
+    
+    .remember-me label {
+      margin: 0;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f5f5f5;
+      margin-top: auto;
+    }
+    
+    #message {
+      color: red;
+      min-height: 20px;
+    }
+    
+    #errorMessage {
+      color: red;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="container">
+      <h2>OneTap ABES</h2>
+      <p>2023b0151019</p>
+      
+      <div id="errorMessage">
+        ✕ Unexpected response from portal
+      </div>
+
+      <input type="text" id="username" placeholder="Enter Username">
+      <input type="password" id="password" placeholder="Enter Password">
+
+      <div class="remember-me">
+        <input type="checkbox" id="rememberMe">
+        <label for="rememberMe">Remember me</label>
+      </div>
+
+      <button onclick="login()">Connect to WiFi</button>
+      <button id="autoLoginBtn" onclick="autoLogin()">Auto Login</button>
+
+      <p id="message"></p>
+    </div>
+
+    <!-- Footer with developer credits -->
+    <footer>
+      <p>Developed by Utkarsh Gupta<br>
+      2nd Year, Computer Engineering<br>
+      ABES Engineering College</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
